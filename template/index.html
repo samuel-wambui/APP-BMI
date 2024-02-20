@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CHECKER</title>
+        <!-- Link to CSS file -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    
+    <form method="post" action="{{ url_for('index') }}">
+        <h1 class = 'BMI'>BMI CHECKER</h1>
+        <label for="weight" class="L1">Enter weight:</label>
+        
+        <input type="number" id="weight" name="weight" required>
+        <br>
+        <label for="height"class="L2">Enter height in meters:</label>
+        <input type="number" step="0.01" id="height" name="height" required>
+        <br>
+        <label for="unit"class="L3">Enter unit (K)g or (L)bs:</label>
+        <select id="unit" name="unit" required class="SELECT">
+            <option value="K"class="k">Kg</option>
+            <option value="L" class="l">Lbs</option>
+        </select>
+        <br>
+        <button type="submit">Calculate BMI</button>
+        {% if bmi %}
+        <form class="f2" >
+        <h2 >Results:</h2>
+        <p class="p1">BMI: {{ bmi }}</p>
+        <p class="p2">Weight: {{ converted_weight }} {{ weight_unit }}</p>
+        <p class="p3">BMI STATUS: {{ bmi_category }}</p>
+    </form>
+    {% endif %}
+    </form>
+
+   
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CHECKER</title>
+        <!-- Link to CSS file -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    
+    <form method="post" action="{{ url_for('index') }}">
+        <h1 class = 'BMI'>BMI CHECKER</h1>
+        <label for="weight" class="L1">Enter weight:</label>
+        
+        <input type="number" id="weight" name="weight" required>
+        <br>
+        <label for="height"class="L2">Enter height in meters:</label>
+        <input type="number" step="0.01" id="height" name="height" required>
+        <br>
+        <label for="unit"class="L3">Enter unit (K)g or (L)bs:</label>
+        <select id="unit" name="unit" required class="SELECT">
+            <option value="K"class="k">Kg</option>
+            <option value="L" class="l">Lbs</option>
+        </select>
+        <br>
+        <button type="submit">Calculate BMI</button>
+        {% if bmi %}
+        <form class="f2" >
+        <h2 >Results:</h2>
+        <p class="p1">BMI: {{ bmi }}</p>
+        <p class="p2">Weight: {{ converted_weight }} {{ weight_unit }}</p>
+        <p class="p3">BMI STATUS: {{ bmi_category }}</p>
+    </form>
+    {% endif %}
+    </form>
+
+   
+</body>
+</html>
